@@ -1,0 +1,19 @@
+#calculator_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* vw -> view width (100vw = width da tela toda [100%]) */
+    /* vh -> view height (100vh = height da tela toda [100%]) muito bom mané */
+}
+
+#calculator{
+    border-radius: 20px;
+    background-color: rgb(75, 75, 75);
+    /* background-color: rgb(107, 107, 107);
+    box-shadow: 25px 20px 20px;
+    color: rgb(27, 27, 27);  [se eu for usar box shadow, são essas as configs*/
+    width: 25vw;
+    height: 70vh;
+}

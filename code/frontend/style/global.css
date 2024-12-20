@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    --background-color: rgb(224, 224, 224) 
+}
+
+body{
+    background-color: var(--background-color);
+}
