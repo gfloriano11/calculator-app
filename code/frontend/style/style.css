@@ -9,12 +9,12 @@
 }
 
 #calculator{
-    border-radius: 20px;
-    background-color: rgb(57, 57, 57);
+    /* border-radius: 20px; */
+    background-color: rgb(0, 0, 0);
     /* background-color: rgb(107, 107, 107);
     box-shadow: 25px 20px 20px;
     color: rgb(27, 27, 27);  [se eu for usar box shadow, são essas as configs]*/
-    width: 25vw;
+    width: 300px;
     height: 70vh;
 }
 
@@ -25,14 +25,14 @@
     width: 100%;
     height: 15vh;
     border-radius: 20px 20px 0 0;
-    background-color: rgb(57, 57, 57);
+    /* background-color: rgb(57, 57, 57); */
 }
 
 #result{
     color: white;
     font-family: sans-serif;
     font-size: 2rem;
-    padding-right: 2vw;
+    padding-right: 15px;
 }
 
 #keys_container{
@@ -40,17 +40,19 @@
 }
 
 #keys{
+    height: 55vh;
     color: white;
-    font-size: 1.4rem;
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
     justify-content: space-around;
+    row-gap: 10px;
 
     & div{
+        cursor: pointer;
         border-radius: 50%;
-        width: 35px;
-        height: 35px;
+        width: 50px;
+        height: 50px;
     }
 
     & div.zero_container{
@@ -64,10 +66,6 @@
     & div.zero{
         width: 100%;
     }
-}
-
-#not_grid_container{
-    width: 100%;
 }
 
 .gray_symbol_container{
@@ -105,6 +103,62 @@
 }
 
 
-@media (min-width: 320px) and (max-width: 425px){
+@media (max-width: 425px){
 
+    body{
+        overflow: hidden;
+    }
+
+    #calculator{
+        border-radius: 0;
+        background-color: rgb(0, 0, 0);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #display{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+        height: 20vh;
+        border-radius: 20px 20px 0 0;
+        /* background-color: rgb(57, 57, 57); */
+    }
+
+    #result{
+        color: white;
+        font-family: sans-serif;
+        font-size: 3rem;
+        padding-right: 6vw;
+    }
+
+    #keys{
+        color: white;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        justify-content: space-around;
+        row-gap: 0;
+        height: 80vh;
+    
+        & div{
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            font-size: 24px;
+        }
+    
+        & div.zero_container{
+            grid-column: 1 / span 2;
+            justify-self: stretch;
+            border-radius: 50px;
+            width: 100%;
+    
+        }
+    
+        & div.zero{
+            width: 100%;
+        }
+    }
 }
