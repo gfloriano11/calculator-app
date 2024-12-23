@@ -9,6 +9,8 @@ keys.forEach((key) => {
 
     key.addEventListener('click', () => {
 
+        // let sign = vai receber o 'data-set-value' do html 
+
         console.log('clicado!');
 
         console.log(key)
