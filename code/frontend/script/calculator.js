@@ -1,22 +1,35 @@
 const display = document.querySelector('#display');
 const result = document.querySelector('#result');
-const keys = document.querySelectorAll('#keys');
-// const sign = document.querySelector
+const operators = document.querySelectorAll('.operator');
 
-keys.forEach((key) => {
+operators.forEach((operator) => {
 
-    console.log('dentro do for each');
-
-    key.addEventListener('click', () => {
-
-        // let sign = vai receber o 'data-set-value' do html 
-
-        console.log('clicado!');
-
-        console.log(key)
-
-        if(key == '+'){
+    operator.addEventListener('click', () => {
+        
+        const sign = operator.dataset.value;
+        
+        if(sign === '+'){
             console.log('somei!');
+        }
+
+        if(sign === '-'){
+            console.log('diminui!');
+        }
+
+        if(sign === '*'){
+            console.log('multipliquei!');
+        }
+
+        if(sign === '/'){
+            console.log('dividi!');
+        }
+
+        if(sign === '%'){
+            console.log('porcentagem!');
+        }
+
+        if(sign === '='){
+            console.log('resultado!');
         }
     })
 })
