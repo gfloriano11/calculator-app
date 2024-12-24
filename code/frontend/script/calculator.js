@@ -1,75 +1,77 @@
-// const result = document.querySelector('#result');
+const display = document.querySelector('#display');
 const operators = document.querySelectorAll('.operator');
+const result = document.querySelector('#result')
+const numbers = document.querySelectorAll('.number');
+let numberOne = document.querySelector('.number_one'); 
+
+if(!numberOne){
+    let clicked = 0;
+    
+    numbers.forEach((number) => {
+
+        number.addEventListener('click', () => {
+            
+            clicked++
+            
+            console.log('clique nº: ', clicked);
+            
+            let num = number.dataset.value;
+            
+            if(clicked <= 10){
+                
+                const input = document.createElement('p');
+                
+                // const numberOne = document.createElement('div');
+                // numberOne.classList.add('number_one');
+                
+                // const numberTwo = document.createElement('div');
+                // numberTwo.classList.add('number_two');
+                
+                input.classList.add('input_number');
+                input.innerText = num;
+                
+                // result.appendChild(numberOne);
+                result.appendChild(input);
+                
+                // console.log(opTeste);
+                // result.appendChild(opTeste);
+            } else {
+                window.alert('Número máximo atingido!');
+            }
+            
+        });
+    });
+}
 
 operators.forEach((operator) => {
     
     operator.addEventListener('click', () => {
-        
+
         const sign = operator.dataset.value;
-        
-        if(sign === '+'){
-            console.log('somei!');
-            sum();
-        }
-        
-        if(sign === '-'){
-            console.log('diminui!');
-            sub();
-        }
-        
-        if(sign === '*'){
-            console.log('multipliquei!');
-            multiply();
-        }
-        
-        if(sign === '/'){
-            console.log('dividi!');
-            divide();
-        }
-        
-        if(sign === '%'){
-            console.log('porcentagem!');
-            percentage();
-        }
-        
+
+        // console.log(sign)
+
         if(sign === '='){
-            console.log('resultado!');
+            result.innerHTML = '';
+            clicked = 0;
             
         }
 
-        console.log(sign)
-        
-        return sign;
-        
-    })
-})
+        const signContainer = document.createElement('div');
+        signContainer.classList.add('math_sign');
 
-export let sign;
+        const opTeste = document.createElement('p');
+        opTeste.innerText = sign;
 
-let numberOne = 0;
-let numberTwo = 0;
+        result.appendChild(signContainer);
+        signContainer.appendChild(opTeste);
 
-function sum(){
-    const calcResult = numberOne + numberTwo;
-    return calcResult;
-}
+        let teste = document.querySelector('.math_sign');
 
-function sub(){
-    const calcResult = numberOne - numberTwo;
-    return calcResult;
-}
+        if(teste){
+        } else {
+            console.log('não existe sinal')
+        }
 
-function multiply(){
-    const calcResult = numberOne * numberTwo;
-    return calcResult;
-}
-
-function divide(){
-    const calcResult = numberOne / numberTwo;
-    return calcResult;
-}
-
-function percentage(){
-    const calcResult = (numberOne/100)*numberTwo;
-    return calcResult;
-}
+    });
+});
