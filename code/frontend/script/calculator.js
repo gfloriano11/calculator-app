@@ -2,7 +2,7 @@
 const operators = document.querySelectorAll('.operator');
 
 operators.forEach((operator) => {
-
+    
     operator.addEventListener('click', () => {
         
         const sign = operator.dataset.value;
@@ -10,15 +10,15 @@ operators.forEach((operator) => {
         if(sign === '+'){
             console.log('somei!');
         }
-
+        
         if(sign === '-'){
             console.log('diminui!');
         }
-
+        
         if(sign === '*'){
             console.log('multipliquei!');
         }
-
+        
         if(sign === '/'){
             console.log('dividi!');
         }
@@ -26,10 +26,13 @@ operators.forEach((operator) => {
         if(sign === '%'){
             console.log('porcentagem!');
         }
-
+        
         if(sign === '='){
             console.log('resultado!');
         }
+        
+        export default sign;
+        
     })
 })
 
