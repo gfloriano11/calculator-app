@@ -1,8 +1,7 @@
-import 'script/calculator.js';
-
+import { sign } from '../script/calculator.js';
 // const display = document.querySelector('#display');
 const result = document.querySelector('#result')
-const numbers = document.querySelectorAll('.use_number');
+const numbers = document.querySelectorAll('.number');
 
 
 let clicked = 0;
@@ -21,8 +20,11 @@ numbers.forEach((number) => {
             const input = document.createElement('p');
             input.classList.add('input_number');
             input.innerText = num;
+            const opTeste = document.createElement('p');
+            opTeste.innerText = sign;
             result.appendChild(input);
-            result.append(sign);
+            console.log(opTeste);
+            result.appendChild(opTeste);
         } else {
             window.alert('Número máximo atingido!');
         }
