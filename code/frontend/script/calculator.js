@@ -1,5 +1,4 @@
-const display = document.querySelector('#display');
-const result = document.querySelector('#result');
+// const result = document.querySelector('#result');
 const operators = document.querySelectorAll('.operator');
 
 operators.forEach((operator) => {
@@ -33,3 +32,7 @@ operators.forEach((operator) => {
         }
     })
 })
+
+function sum(){
+    
+}
