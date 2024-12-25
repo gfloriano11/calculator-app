@@ -2,6 +2,7 @@ const display = document.querySelector('#display');
 const operators = document.querySelectorAll('.operator');
 const result = document.querySelector('#result')
 const numbers = document.querySelectorAll('.number');
+const clear = document.querySelector('.clear');
 
 let currentInput = '';
 let equal = false;
@@ -40,7 +41,7 @@ operators.forEach((operator) => {
             } catch {
                 alert('Erro na expressão!');
                 currentInput = '';
-                display.textContent = '';
+                result.textContent = '';
                 location.reload(true)
             }
 
@@ -59,3 +60,11 @@ operators.forEach((operator) => {
 
     });
 });
+
+clear.addEventListener('click', clearDisplay);
+
+function clearDisplay(){
+
+    result.textContent = '';
+    currentInput = '';
+}
