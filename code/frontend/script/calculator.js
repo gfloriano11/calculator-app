@@ -3,19 +3,19 @@ const operators = document.querySelectorAll('.operator');
 const result = document.querySelector('#result')
 const numbers = document.querySelectorAll('.number');
 
+let currentInput = '';
+let equal = false;
+
 numbers.forEach((number) => {
 
     number.addEventListener('click', () => {
-        
-        let num = number.dataset.value;
 
-        const input = document.createElement('p');
+        equal = true
+
+        currentInput = currentInput + number.dataset.value;
             
-        input.classList.add('input_number');
-        input.innerText = num;
-        
-        result.appendChild(input);
-        
+        result.textContent = currentInput;
+
     });
 });
 
@@ -25,25 +25,36 @@ operators.forEach((operator) => {
 
         const sign = operator.dataset.value;
 
-
         if(sign === '='){
-            result.innerHTML = '';
-        } else{
 
-            const signContainer = document.createElement('div');
-            signContainer.classList.add('math_sign');
-    
-            const opTeste = document.createElement('p');
-            opTeste.innerText = sign;
-    
-            result.appendChild(signContainer);
-            signContainer.appendChild(opTeste);
-        }
+            equal = true;
 
-        let teste = document.querySelector('.math_sign');
+            result.textContent = '';
 
-        if(!teste){
-            console.log('não existe sinal')
+            try{
+                currentInput = eval(currentInput);
+                result.textContent = (currentInput);
+                console.log('original: ', currentInput);
+                console.log('arredondado: ', Math.round(currentInput));
+
+            } catch {
+                alert('Erro na expressão!');
+                currentInput = '';
+                display.textContent = '';
+                location.reload(true)
+            }
+
+        } else {
+
+            console.log(sign)
+            console.log(currentInput)
+
+            currentInput = currentInput + sign;
+
+            console.log(currentInput)
+
+            result.textContent = currentInput;
+
         }
 
     });
